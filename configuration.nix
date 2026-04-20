@@ -31,7 +31,7 @@
   time.timeZone = "Europe/Berlin";
 
   # Select internationalisation properties.
-  i18n.defaultLocale = "en_US.UTF-8";
+  i18n.defaultLocale = "de_DE.UTF-8";
 
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "de_DE.UTF-8";
@@ -93,6 +93,9 @@
     ];
   };
 
+  programs.hyprland.enable = true;  
+  services.displayManager.defaultSession = "hyprland";
+
   # Install firefox.
   programs.firefox.enable = true;
 
@@ -108,7 +111,11 @@
     wget
     htop
     neofetch
-    firefox
+    hyprland
+    kitty
+    waybar
+    wofi
+    nwg-look
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
