@@ -26,6 +26,14 @@
   services.displayManager.defaultSession = "hyprland";
 
   services.xserver.enable = true;
+  services.xserver.xkb = {
+    layout = "de";
+    variant = "";
+  };
+
+  i18n.extraLocaleSettings = {
+    LC_ALL = "de_DE.UTF-8";
+  };
  
   programs.hyprland = {
     enable = true;
