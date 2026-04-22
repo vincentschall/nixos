@@ -4,6 +4,7 @@
   imports =
     [
       ./hardware-configuration.nix
+      <home-manager/nixos>
     ];
 
   boot.loader.systemd-boot.enable = true;
@@ -35,10 +36,7 @@
     LC_ALL = "de_DE.UTF-8";
   };
  
-  programs.hyprland = {
-    enable = true;
-    xwayland.enable = true;
-  };
+  programs.hyprland.enable = true;
  
   users.users.vinny = {
     isNormalUser = true;
@@ -47,6 +45,9 @@
   };
 
   nixpkgs.config.allowUnfree = true;
+
+  home-manager.users.vinny = import ./home.nix;
+  home-manager.useGlobalPkgs = true;
 
   environment.systemPackages = with pkgs; [
     vim 
