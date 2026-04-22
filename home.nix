@@ -22,7 +22,9 @@
 	"WLR_NO_HARDWARE_CURSORS,1"
 	"WLR_RENDERER_ALLOW_SOFTWARE,1"
       ];
-      monitor = ",preferred,auto,1";
+      monitor = [
+	"Virtual-1, 2560x1600@59.99, 0x0, 1"
+      ];
       input = {
 	kb_layout = "de";
       };
