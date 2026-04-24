@@ -61,6 +61,7 @@
     wofi
     nwg-look
     firefox
+
   ];
  
   environment.sessionVariables = {
