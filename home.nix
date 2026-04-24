@@ -35,7 +35,7 @@
 					"WLR_RENDERER_ALLOW_SOFTWARE,1"
 			];
 			monitor = [
-				"Virtual-1, 1920x1080@60, 0x0, 1"
+				"Virtual-1, preferred, auto, 0.8"
 			];
 			input = {
 				kb_layout = "de";
