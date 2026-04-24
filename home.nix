@@ -8,7 +8,7 @@
 	wayland.windowManager.hyprland = {
 		enable = true;
 		settings = {
-			"exec-once" = [ "waybar" ]; # Startet Waybar automatisch [cite: 11]
+			"exec-once" = [ "waybar" ]; 
 				"$mod" = "SUPER";
 			bind = [
 				"$mod, Q, exec, kitty"
@@ -40,10 +40,10 @@
 	home.file.".config/waybar/style.css".source = ./waybar/style.css;
 
 	
-fonts.fontconfig.enable = true;
-home.packages = with pkgs; [
-	nerd-fonts.jetbrains-mono
-];
+	fonts.fontconfig.enable = true;
+	home.packages = with pkgs; [
+		nerd-fonts.jetbrains-mono
+	];
 
-programs.home-manager.enable = true;
+	programs.home-manager.enable = true;
 }
