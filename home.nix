@@ -9,7 +9,7 @@
 		enable = true;
 		settings = {
 			"exec-once" = [ "waybar" ]; 
-				"$mod" = "SUPER";
+			"$mod" = "SUPER";
 			bind = [
 				"$mod, Q, exec, kitty"
 					"$mod, C, killactive,"
@@ -24,7 +24,16 @@
 					"$mod SHIFT, 7, movetoworkspace, 7"
 					"$mod SHIFT, 8, movetoworkspace, 8"
 					"$mod SHIFT, 9, movetoworkspace, 9"
-			];
+					"$mod, 1, workspace, 1" 
+					"$mod, 2, workspace, 2" 
+					"$mod, 3, workspace, 3" 
+					"$mod, 4, workspace, 4" 
+					"$mod, 5, workspace, 5" 
+					"$mod, 6, workspace, 6" 
+					"$mod, 7, workspace, 7" 
+					"$mod, 8, workspace, 8" 
+					"$mod, 9, workspace, 9" 
+					];
 			cursor.no_hardware_cursors = true;
 			env = [
 				"WLR_NO_HARDWARE_CURSORS,1"
@@ -39,7 +48,7 @@
 	home.file.".config/waybar/config".source = ./waybar/config.jsonc;
 	home.file.".config/waybar/style.css".source = ./waybar/style.css;
 
-	
+
 	fonts.fontconfig.enable = true;
 	home.packages = with pkgs; [
 		nerd-fonts.jetbrains-mono

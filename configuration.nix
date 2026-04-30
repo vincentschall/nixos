@@ -61,7 +61,7 @@
     wofi
     nwg-look
     firefox
-
+    neovim
   ];
  
   environment.sessionVariables = {
