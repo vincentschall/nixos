@@ -48,6 +48,8 @@
 	home.file.".config/waybar/config".source = ./waybar/config.jsonc;
 	home.file.".config/waybar/style.css".source = ./waybar/style.css;
 
+	home.file.".config/nvim/init.lua".source = ./nvim/init.lua;
+	home.file.".config/nvim/lazy-lock.json".source = ./nvim/lazy-lock.json;
 
 	fonts.fontconfig.enable = true;
 	home.packages = with pkgs; [

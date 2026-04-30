@@ -1,74 +1,81 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [
-      ./hardware-configuration.nix
-      <home-manager/nixos>
-    ];
+	imports =
+		[
+		./hardware-configuration.nix
+			<home-manager/nixos>
+		];
 
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+	boot.loader.systemd-boot.enable = true;
+	boot.loader.efi.canTouchEfiVariables = true;
+	boot.kernelPackages = pkgs.linuxPackages_latest;
 
-  networking.hostName = "nixos"; 
-  networking.networkmanager.enable = true;
+	networking.hostName = "nixos"; 
+	networking.networkmanager.enable = true;
 
-  time.timeZone = "Europe/Berlin";
-  i18n.defaultLocale = "de_DE.UTF-8";
-  console.keyMap = "de";
-  
-  hardware.graphics.enable = true;
-  services.xserver.videoDrivers = [ "virtio" ];
-  
-  services.displayManager.sddm.enable = true;
-  services.displayManager.sddm.wayland.enable = true;
+	time.timeZone = "Europe/Berlin";
+	i18n.defaultLocale = "de_DE.UTF-8";
+	console.keyMap = "de";
 
-  services.displayManager.defaultSession = "hyprland";
+	hardware.graphics.enable = true;
+	services.xserver.videoDrivers = [ "virtio" ];
 
-  services.xserver.enable = true;
-  services.xserver.xkb = {
-    layout = "de";
-    variant = "";
-  };
+	services.displayManager.sddm.enable = true;
+	services.displayManager.sddm.wayland.enable = true;
 
-  i18n.extraLocaleSettings = {
-    LC_ALL = "de_DE.UTF-8";
-  };
- 
-  programs.hyprland.enable = true;
- 
-  users.users.vinny = {
-    isNormalUser = true;
-    description = "Vincent Schall";
-    extraGroups = [ "networkmanager" "wheel" ];
-  };
+	services.displayManager.defaultSession = "hyprland";
 
-  nixpkgs.config.allowUnfree = true;
+	services.xserver.enable = true;
+	services.xserver.xkb = {
+		layout = "de";
+		variant = "";
+	};
 
-  home-manager.users.vinny = import ./home.nix;
-  home-manager.useGlobalPkgs = true;
+	i18n.extraLocaleSettings = {
+		LC_ALL = "de_DE.UTF-8";
+	};
 
-  environment.systemPackages = with pkgs; [
-    vim 
-    git
-    curl
-    wget
-    htop
-    fastfetch    
-    kitty
-    waybar
-    wofi
-    nwg-look
-    firefox
-    neovim
-  ];
- 
-  environment.sessionVariables = {
-    WLR_NO_HARDWARE_CURSORS = "1";
-    WLR_RENDERER_ALLOW_SOFTWARE = "1";
-  };
- 
-  system.stateVersion = "25.11";
+	programs.hyprland.enable = true;
+
+	users.users.vinny = {
+		isNormalUser = true;
+		description = "Vincent Schall";
+		extraGroups = [ "networkmanager" "wheel" ];
+	};
+
+	nixpkgs.config.allowUnfree = true;
+
+	home-manager.users.vinny = import ./home.nix;
+	home-manager.useGlobalPkgs = true;
+
+	environment.systemPackages = with pkgs; [
+		vim 
+			git
+			curl
+			wget
+			htop
+			fastfetch    
+			kitty
+			waybar
+			wofi
+			nwg-look
+			firefox
+			neovim
+			gcc
+			gnumake
+			unzip
+			ripgrep
+			fd
+			lua-language-server
+			luarocks-nix
+	];
+
+	environment.sessionVariables = {
+		WLR_NO_HARDWARE_CURSORS = "1";
+		WLR_RENDERER_ALLOW_SOFTWARE = "1";
+	};
+
+	system.stateVersion = "25.11";
 
 }
